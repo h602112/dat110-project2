@@ -91,9 +91,7 @@ public class Storage {
 
 		// TODO: add the user as subscriber to the topic
 
-		if (subscriptions.get(user) != null) {
-			subscriptions.get(topic).add(user);
-		}
+		subscriptions.get(topic).add(user);
 		
 
 		
@@ -102,9 +100,8 @@ public class Storage {
 	public void removeSubscriber(String user, String topic) {
 
 		// TODO: remove the user as subscriber to the topic
-		if (subscriptions.get(user) != null) {
-			subscriptions.get(topic).remove(user);
 
-		}
+		subscriptions.get(topic).remove(user);
+
 	}
 }
