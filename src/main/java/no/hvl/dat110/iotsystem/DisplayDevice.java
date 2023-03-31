@@ -27,15 +27,17 @@ public class DisplayDevice {
 		client.connect();
 		client.createTopic(Common.TEMPTOPIC);
 		client.subscribe(Common.TEMPTOPIC);
+
 		for (int i = 0; i < COUNT; i++) {
-			Message msg = client.receive();
-			System.out.println(msg.toString());
+			PublishMsg message = (PublishMsg) client.receive();
+			System.out.println(message.getMessage());
 		}
+
 		client.unsubscribe(Common.TEMPTOPIC);
 		client.disconnect();
-		
+
 		// TODO - END
-		
+
 		System.out.println("Display stopping ... ");
 		
 
